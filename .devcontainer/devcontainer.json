@@ -32,7 +32,8 @@
     "ms-python.vscode-pylance",
     "redhat.vscode-yaml",
     "mads-hartmann.bash-ide-vscode",
-    "dbaeumer.vscode-eslint@2.1.5"
+    "dbaeumer.vscode-eslint@2.1.5",
+    "hashicorp.terraform"
   ],
   "dockerFile": "../Dockerfile",
 

@@ -5,8 +5,10 @@
 
 # Module directory
 .terraform/
+.gen/
 *.iml
 .idea/
+node_modules/
 
 .build-harness
 build-harness/

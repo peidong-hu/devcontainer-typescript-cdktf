@@ -1,0 +1,56 @@
+// For format details, see https://aka.ms/devcontainer.json. For config options, see the README at:
+// https://github.com/microsoft/vscode-dev-containers/tree/v0.177.0/containers/docker-existing-dockerfile
+{
+  "name": "GenericDev",
+
+  // Sets the run context to one level up instead of the .devcontainer folder.
+  "context": "..",
+
+  // Update the 'dockerFile' property if you aren't using the standard 'Dockerfile' filename.
+  // "dockerFile": "Dockerfile",
+
+  // Set *default* container specific settings.json values on container create.
+  "settings": {
+      "terminal.integrated.profiles.linux": {
+          "bash": {
+            "path": "/bin/bash"
+        }
+      },
+      "terminal.integrated.defaultProfile.linux": "bash"
+  },
+
+  // Add the IDs of extensions you want installed when the container is created.
+  "extensions": [
+    "firsttris.vscode-jest-runner",
+		"esbenp.prettier-vscode",
+		"ms-vscode.vscode-typescript-tslint-plugin",
+		"ms-vsliveshare.vsliveshare",
+		"rtbenfield.vscode-jest-test-adapter",
+    "editorconfig.editorconfig",
+    "eamodio.gitlens",
+    "davidanson.vscode-markdownlint",
+    "ms-python.vscode-pylance",
+    "redhat.vscode-yaml",
+    "mads-hartmann.bash-ide-vscode",
+    "dbaeumer.vscode-eslint@2.1.5"
+  ],
+  "dockerFile": "../Dockerfile",
+
+  // Use 'forwardPorts' to make a list of ports inside the container available locally.
+  // "forwardPorts": [],
+
+  // Uncomment the next line to run commands after the container is created - for example installing curl.
+  // "postCreateCommand": "apt-get update && apt-get install -y curl",
+
+  // Uncomment when using a ptrace-based debugger like C++, Go, and Rust
+  // "runArgs": [ "--cap-add=SYS_PTRACE", "--security-opt", "seccomp=unconfined" ],
+
+  // Uncomment to use the Docker CLI from inside the container. See https://aka.ms/vscode-remote/samples/docker-from-docker.
+  // "mounts": [ "source=/var/run/docker.sock,target=/var/run/docker.sock,type=bind" ],
+  "mounts": [
+    "source=${localEnv:HOME}/.aws,target=/root/.aws,type=bind,consistency=cached"
+  ]
+
+  // Uncomment to connect as a non-root user if you've added one. See https://aka.ms/vscode-remote/containers/non-root.
+  // "remoteUser": "vscode"
+}

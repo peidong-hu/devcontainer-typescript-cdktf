@@ -2,7 +2,12 @@ import { Construct } from "constructs";
 import { App, TerraformStack } from "cdktf";
 import { AwsProvider } from "../.gen/providers/aws/provider";
 import { Vpc } from '../.gen/modules/vpc';
-
+import {
+    TFModuleStack,
+    TFModuleVariable,
+    TFModuleOutput,
+    ProviderRequirement,
+  } from "cdktf-tf-module-stack";
 class MyStack extends TerraformStack {
   constructor(scope: Construct, id: string) {
     super(scope, id);

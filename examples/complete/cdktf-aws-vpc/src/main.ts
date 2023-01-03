@@ -8,7 +8,7 @@ import {
     TFModuleOutput,
     ProviderRequirement,
   } from "cdktf-tf-module-stack";
-class MyVpcStack extends TFModuleStack {
+class MyVpcModule extends TFModuleStack {
   constructor(scope: Construct, id: string) {
     super(scope, id);
     new ProviderRequirement(this, "null", "~> 2.0");
@@ -37,6 +37,6 @@ class MyVpcStack extends TFModuleStack {
 }
 
 const app = new App();
-new MyVpcStack(app, "hello-terraform");
+new MyVpcModule(app, "hello-terraform");
 app.synth();
 

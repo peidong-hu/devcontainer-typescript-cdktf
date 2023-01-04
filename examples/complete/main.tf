@@ -26,6 +26,11 @@ module "requestor_vpc" {
   context = module.this.context
 }
 
+module "requestor_vpc2" {
+  source                  = "./cdktf-aws-vpc/cdktf.out/stacks/hello-terraform"
+  vpcName                 = "firstTestCdkModule"
+}
+
 module "requestor_subnets" {
   source               = "cloudposse/dynamic-subnets/aws"
   version              = "2.0.4"
